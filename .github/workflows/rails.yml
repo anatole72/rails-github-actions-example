@@ -42,6 +42,7 @@ jobs:
           sudo apt-get -yqq install libpq-dev build-essential libcurl4-openssl-dev
           gem install bundler
           bundle install --jobs 4 --retry 3
+          bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
           yarn install
       - name: Setup test database
         env:
